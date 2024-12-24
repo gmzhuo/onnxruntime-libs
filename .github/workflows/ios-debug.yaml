@@ -124,6 +124,7 @@ jobs:
           ls -1 build-ios/$arch/Debug/Debug-iphoneos
           ls -lh build-ios/$arch/Debug/Debug-iphoneos
 
+          echo do libtool to static
           libtool -static -o build-ios/$arch/onnxruntime.a \
             build-ios/$arch/Debug/static_libraries/libabsl_base.a \
             build-ios/$arch/Debug/static_libraries/libabsl_city.a \
@@ -158,9 +159,12 @@ jobs:
 
           # from 1.17.3, libonnxruntime_coreml_proto.a is renamed to libcoreml_proto.a
 
+          echo for dst
           dst=onnxruntime-ios-$arch-${{ env.ONNXRUNTIME_VERSION }}
+          echo dst ${dst}
 
           mkdir -p $dst
+          echo mkdir $dst done
 
           cp -v build-ios/$arch/onnxruntime.a $dst
 
