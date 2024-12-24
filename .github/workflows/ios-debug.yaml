@@ -145,7 +145,7 @@ jobs:
             build-ios/$arch/Debug/static_libraries/libprotobuf-lited.a \
             build-ios/$arch/Debug/static_libraries/libre2.a \
             \
-            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_coreml_proto.a
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_coreml_proto.a \
             build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_common.a \
             build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_flatbuffers.a \
             build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_framework.a \
@@ -301,7 +301,7 @@ jobs:
             build-ios/$arch/Debug/static_libraries/libprotobuf-lited.a \
             build-ios/$arch/Debug/static_libraries/libre2.a \
             \
-            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_coreml_proto.a
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_coreml_proto.a \
             build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_common.a \
             build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_flatbuffers.a \
             build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_framework.a \
