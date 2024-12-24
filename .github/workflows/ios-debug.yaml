@@ -163,10 +163,12 @@ jobs:
           dst=onnxruntime-ios-$arch-${{ env.ONNXRUNTIME_VERSION }}
           echo dst ${dst}
 
-          mkdir -p $dst
+          mkdir -p $dst/framework
           echo mkdir $dst done
 
           cp -v build-ios/$arch/onnxruntime.a $dst
+          cp -v build-ios/$arch/Debug/Debug-iphoneos/onnxruntime.framework $dst/framework
+          cp -v build-ios/$arch/Debug/Debug-iphoneos/onnxruntime.framework.dSYM $dst/framework
 
           cp -v build-ios/arm64/Debug/build-ios/arm64/install/bin/onnxruntime.framework/Headers/* $dst/
 
