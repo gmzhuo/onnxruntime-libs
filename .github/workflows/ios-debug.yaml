@@ -141,7 +141,7 @@ jobs:
             build-ios/$arch/Debug/static_libraries/libnsync_cpp.a \
             build-ios/$arch/Debug/static_libraries/libonnx.a \
             build-ios/$arch/Debug/static_libraries/libonnx_proto.a \
-            build-ios/$arch/Debug/static_libraries/libprotobuf-lite.a \
+            build-ios/$arch/Debug/static_libraries/libprotobuf-lited.a \
             build-ios/$arch/Debug/static_libraries/libre2.a \
             \
             build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_coreml_proto.a
@@ -294,7 +294,7 @@ jobs:
             build-ios/$arch/Debug/static_libraries/libnsync_cpp.a \
             build-ios/$arch/Debug/static_libraries/libonnx.a \
             build-ios/$arch/Debug/static_libraries/libonnx_proto.a \
-            build-ios/$arch/Debug/static_libraries/libprotobuf-lite.a \
+            build-ios/$arch/Debug/static_libraries/libprotobuf-lited.a \
             build-ios/$arch/Debug/static_libraries/libre2.a \
             \
             build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_coreml_proto.a
@@ -444,7 +444,7 @@ jobs:
             build-macos/$arch/Debug/static_libraries/libnsync_cpp.a \
             build-macos/$arch/Debug/static_libraries/libonnx.a \
             build-macos/$arch/Debug/static_libraries/libonnx_proto.a \
-            build-macos/$arch/Debug/static_libraries/libprotobuf-lite.a \
+            build-macos/$arch/Debug/static_libraries/libprotobuf-lited.a \
             build-macos/$arch/Debug/static_libraries/libre2.a \
             \
             build-macos/$arch/Debug/Debug/libonnxruntime_coreml_proto.a \
