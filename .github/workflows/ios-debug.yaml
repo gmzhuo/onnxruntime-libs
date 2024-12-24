@@ -1,4 +1,4 @@
-name: ios
+name: ios-debug
 
 on:
   workflow_dispatch:
