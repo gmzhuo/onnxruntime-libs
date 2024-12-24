@@ -144,7 +144,7 @@ jobs:
             build-ios/$arch/Release/static_libraries/libprotobuf-lite.a \
             build-ios/$arch/Release/static_libraries/libre2.a \
             \
-            build-ios/$arch/Release/Release-iphoneos/libcoreml_proto.a \
+            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_coreml_proto.a
             build-ios/$arch/Release/Release-iphoneos/libonnxruntime_common.a \
             build-ios/$arch/Release/Release-iphoneos/libonnxruntime_flatbuffers.a \
             build-ios/$arch/Release/Release-iphoneos/libonnxruntime_framework.a \
