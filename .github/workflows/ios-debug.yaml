@@ -86,7 +86,7 @@ jobs:
 
           python3 ./tools/ci_build/build.py \
             --build_dir $build_dir \
-            --config Release \
+            --config Debug \
             --update \
             --build \
             --use_xcode \
@@ -111,50 +111,50 @@ jobs:
           version=${{ env.ONNXRUNTIME_VERSION }}
           arch=arm64
 
-          ls -lh build-ios/$arch/Release/Release-iphoneos/onnxruntime.framework
+          ls -lh build-ios/$arch/Debug/Debug-iphoneos/onnxruntime.framework
 
-          file build-ios/$arch/Release/Release-iphoneos/onnxruntime.framework/onnxruntime
+          file build-ios/$arch/Debug/Debug-iphoneos/onnxruntime.framework/onnxruntime
 
-          tree build-ios/$arch/Release/Release-iphoneos/onnxruntime.framework
+          tree build-ios/$arch/Debug/Debug-iphoneos/onnxruntime.framework
 
-          ls -1 build-ios/$arch/Release/static_libraries
+          ls -1 build-ios/$arch/Debug/static_libraries
 
-          ls -lh build-ios/$arch/Release/static_libraries
+          ls -lh build-ios/$arch/Debug/static_libraries
           echo "----------"
-          ls -1 build-ios/$arch/Release/Release-iphoneos
-          ls -lh build-ios/$arch/Release/Release-iphoneos
+          ls -1 build-ios/$arch/Debug/Debug-iphoneos
+          ls -lh build-ios/$arch/Debug/Debug-iphoneos
 
           libtool -static -o build-ios/$arch/onnxruntime.a \
-            build-ios/$arch/Release/static_libraries/libabsl_base.a \
-            build-ios/$arch/Release/static_libraries/libabsl_city.a \
-            build-ios/$arch/Release/static_libraries/libabsl_hash.a \
-            build-ios/$arch/Release/static_libraries/libabsl_low_level_hash.a \
-            build-ios/$arch/Release/static_libraries/libabsl_raw_hash_set.a \
-            build-ios/$arch/Release/static_libraries/libabsl_raw_logging_internal.a \
-            build-ios/$arch/Release/static_libraries/libabsl_strings.a \
-            build-ios/$arch/Release/static_libraries/libabsl_synchronization.a \
-            build-ios/$arch/Release/static_libraries/libabsl_throw_delegate.a \
-            build-ios/$arch/Release/static_libraries/libabsl_time.a \
-            build-ios/$arch/Release/static_libraries/libclog.a \
-            build-ios/$arch/Release/static_libraries/libcpuinfo.a \
-            build-ios/$arch/Release/static_libraries/libflatbuffers.a \
-            build-ios/$arch/Release/static_libraries/libnsync_cpp.a \
-            build-ios/$arch/Release/static_libraries/libonnx.a \
-            build-ios/$arch/Release/static_libraries/libonnx_proto.a \
-            build-ios/$arch/Release/static_libraries/libprotobuf-lite.a \
-            build-ios/$arch/Release/static_libraries/libre2.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_base.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_city.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_hash.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_low_level_hash.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_raw_hash_set.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_raw_logging_internal.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_strings.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_synchronization.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_throw_delegate.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_time.a \
+            build-ios/$arch/Debug/static_libraries/libclog.a \
+            build-ios/$arch/Debug/static_libraries/libcpuinfo.a \
+            build-ios/$arch/Debug/static_libraries/libflatbuffers.a \
+            build-ios/$arch/Debug/static_libraries/libnsync_cpp.a \
+            build-ios/$arch/Debug/static_libraries/libonnx.a \
+            build-ios/$arch/Debug/static_libraries/libonnx_proto.a \
+            build-ios/$arch/Debug/static_libraries/libprotobuf-lite.a \
+            build-ios/$arch/Debug/static_libraries/libre2.a \
             \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_coreml_proto.a
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_common.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_flatbuffers.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_framework.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_graph.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_mlas.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_optimizer.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_providers.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_providers_coreml.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_session.a \
-            build-ios/$arch/Release/Release-iphoneos/libonnxruntime_util.a
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_coreml_proto.a
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_common.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_flatbuffers.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_framework.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_graph.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_mlas.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_optimizer.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_providers.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_providers_coreml.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_session.a \
+            build-ios/$arch/Debug/Debug-iphoneos/libonnxruntime_util.a
 
           # from 1.17.3, libonnxruntime_coreml_proto.a is renamed to libcoreml_proto.a
 
@@ -164,7 +164,7 @@ jobs:
 
           cp -v build-ios/$arch/onnxruntime.a $dst
 
-          cp -v build-ios/arm64/Release/build-ios/arm64/install/bin/onnxruntime.framework/Headers/* $dst/
+          cp -v build-ios/arm64/Debug/build-ios/arm64/install/bin/onnxruntime.framework/Headers/* $dst/
 
           ls -lh $dst
 
@@ -244,7 +244,7 @@ jobs:
 
           python3 ./tools/ci_build/build.py \
             --build_dir $build_dir \
-            --config Release \
+            --config Debug \
             --update \
             --build \
             --use_xcode \
@@ -269,45 +269,45 @@ jobs:
           version=${{ env.ONNXRUNTIME_VERSION }}
           arch=simulator/${{ matrix.arch }}
 
-          ls -1 build-ios/$arch/Release/static_libraries
+          ls -1 build-ios/$arch/Debug/static_libraries
 
-          ls -lh build-ios/$arch/Release/static_libraries
+          ls -lh build-ios/$arch/Debug/static_libraries
 
           echo "----------"
-          ls -1 build-ios/$arch/Release/Release-iphonesimulator
-          ls -lh build-ios/$arch/Release/Release-iphonesimulator
+          ls -1 build-ios/$arch/Debug/Debug-iphonesimulator
+          ls -lh build-ios/$arch/Debug/Debug-iphonesimulator
 
           libtool -static -o build-ios/$arch/onnxruntime.a \
-            build-ios/$arch/Release/static_libraries/libabsl_base.a \
-            build-ios/$arch/Release/static_libraries/libabsl_city.a \
-            build-ios/$arch/Release/static_libraries/libabsl_hash.a \
-            build-ios/$arch/Release/static_libraries/libabsl_low_level_hash.a \
-            build-ios/$arch/Release/static_libraries/libabsl_raw_hash_set.a \
-            build-ios/$arch/Release/static_libraries/libabsl_raw_logging_internal.a \
-            build-ios/$arch/Release/static_libraries/libabsl_strings.a \
-            build-ios/$arch/Release/static_libraries/libabsl_synchronization.a \
-            build-ios/$arch/Release/static_libraries/libabsl_throw_delegate.a \
-            build-ios/$arch/Release/static_libraries/libabsl_time.a \
-            build-ios/$arch/Release/static_libraries/libclog.a \
-            build-ios/$arch/Release/static_libraries/libcpuinfo.a \
-            build-ios/$arch/Release/static_libraries/libflatbuffers.a \
-            build-ios/$arch/Release/static_libraries/libnsync_cpp.a \
-            build-ios/$arch/Release/static_libraries/libonnx.a \
-            build-ios/$arch/Release/static_libraries/libonnx_proto.a \
-            build-ios/$arch/Release/static_libraries/libprotobuf-lite.a \
-            build-ios/$arch/Release/static_libraries/libre2.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_base.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_city.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_hash.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_low_level_hash.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_raw_hash_set.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_raw_logging_internal.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_strings.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_synchronization.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_throw_delegate.a \
+            build-ios/$arch/Debug/static_libraries/libabsl_time.a \
+            build-ios/$arch/Debug/static_libraries/libclog.a \
+            build-ios/$arch/Debug/static_libraries/libcpuinfo.a \
+            build-ios/$arch/Debug/static_libraries/libflatbuffers.a \
+            build-ios/$arch/Debug/static_libraries/libnsync_cpp.a \
+            build-ios/$arch/Debug/static_libraries/libonnx.a \
+            build-ios/$arch/Debug/static_libraries/libonnx_proto.a \
+            build-ios/$arch/Debug/static_libraries/libprotobuf-lite.a \
+            build-ios/$arch/Debug/static_libraries/libre2.a \
             \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_coreml_proto.a
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_common.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_flatbuffers.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_framework.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_graph.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_mlas.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_optimizer.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_providers.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_providers_coreml.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_session.a \
-            build-ios/$arch/Release/Release-iphonesimulator/libonnxruntime_util.a
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_coreml_proto.a
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_common.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_flatbuffers.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_framework.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_graph.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_mlas.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_optimizer.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_providers.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_providers_coreml.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_session.a \
+            build-ios/$arch/Debug/Debug-iphonesimulator/libonnxruntime_util.a
 
           dst=onnxruntime-ios-simulator-${{ matrix.arch }}-${{ env.ONNXRUNTIME_VERSION }}
           mkdir -p $dst
@@ -394,7 +394,7 @@ jobs:
 
           python3 ./tools/ci_build/build.py \
             --build_dir $build_dir \
-            --config Release \
+            --config Debug \
             --update \
             --build \
             --use_xcode \
@@ -419,45 +419,45 @@ jobs:
           version=${{ env.ONNXRUNTIME_VERSION }}
           arch=${{ matrix.arch }}
 
-          ls -1 build-macos/$arch/Release/static_libraries
+          ls -1 build-macos/$arch/Debug/static_libraries
 
-          ls -lh build-macos/$arch/Release/static_libraries
+          ls -lh build-macos/$arch/Debug/static_libraries
 
           echo "----------"
-          ls -1 build-macos/$arch/Release/Release
-          ls -lh build-macos/$arch/Release/Release
+          ls -1 build-macos/$arch/Debug/Debug
+          ls -lh build-macos/$arch/Debug/Debug
 
           libtool -static -o build-macos/$arch/onnxruntime.a \
-            build-macos/$arch/Release/static_libraries/libabsl_base.a \
-            build-macos/$arch/Release/static_libraries/libabsl_city.a \
-            build-macos/$arch/Release/static_libraries/libabsl_hash.a \
-            build-macos/$arch/Release/static_libraries/libabsl_low_level_hash.a \
-            build-macos/$arch/Release/static_libraries/libabsl_raw_hash_set.a \
-            build-macos/$arch/Release/static_libraries/libabsl_raw_logging_internal.a \
-            build-macos/$arch/Release/static_libraries/libabsl_strings.a \
-            build-macos/$arch/Release/static_libraries/libabsl_synchronization.a \
-            build-macos/$arch/Release/static_libraries/libabsl_throw_delegate.a \
-            build-macos/$arch/Release/static_libraries/libabsl_time.a \
-            build-macos/$arch/Release/static_libraries/libclog.a \
-            build-macos/$arch/Release/static_libraries/libcpuinfo.a \
-            build-macos/$arch/Release/static_libraries/libflatbuffers.a \
-            build-macos/$arch/Release/static_libraries/libnsync_cpp.a \
-            build-macos/$arch/Release/static_libraries/libonnx.a \
-            build-macos/$arch/Release/static_libraries/libonnx_proto.a \
-            build-macos/$arch/Release/static_libraries/libprotobuf-lite.a \
-            build-macos/$arch/Release/static_libraries/libre2.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_base.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_city.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_hash.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_low_level_hash.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_raw_hash_set.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_raw_logging_internal.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_strings.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_synchronization.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_throw_delegate.a \
+            build-macos/$arch/Debug/static_libraries/libabsl_time.a \
+            build-macos/$arch/Debug/static_libraries/libclog.a \
+            build-macos/$arch/Debug/static_libraries/libcpuinfo.a \
+            build-macos/$arch/Debug/static_libraries/libflatbuffers.a \
+            build-macos/$arch/Debug/static_libraries/libnsync_cpp.a \
+            build-macos/$arch/Debug/static_libraries/libonnx.a \
+            build-macos/$arch/Debug/static_libraries/libonnx_proto.a \
+            build-macos/$arch/Debug/static_libraries/libprotobuf-lite.a \
+            build-macos/$arch/Debug/static_libraries/libre2.a \
             \
-            build-macos/$arch/Release/Release/libonnxruntime_coreml_proto.a \
-            build-macos/$arch/Release/Release/libonnxruntime_common.a \
-            build-macos/$arch/Release/Release/libonnxruntime_flatbuffers.a \
-            build-macos/$arch/Release/Release/libonnxruntime_framework.a \
-            build-macos/$arch/Release/Release/libonnxruntime_graph.a \
-            build-macos/$arch/Release/Release/libonnxruntime_mlas.a \
-            build-macos/$arch/Release/Release/libonnxruntime_optimizer.a \
-            build-macos/$arch/Release/Release/libonnxruntime_providers.a \
-            build-macos/$arch/Release/Release/libonnxruntime_providers_coreml.a \
-            build-macos/$arch/Release/Release/libonnxruntime_session.a \
-            build-macos/$arch/Release/Release/libonnxruntime_util.a
+            build-macos/$arch/Debug/Debug/libonnxruntime_coreml_proto.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_common.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_flatbuffers.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_framework.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_graph.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_mlas.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_optimizer.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_providers.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_providers_coreml.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_session.a \
+            build-macos/$arch/Debug/Debug/libonnxruntime_util.a
 
           dst=onnxruntime-macos-${{ matrix.arch }}-${{ env.ONNXRUNTIME_VERSION }}
           mkdir -p $dst
