@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: onnxruntime-ios-arm64-${{ env.ONNXRUNTIME_VERSION }}
-          key: onnxruntime-ios-arm64-${{ env.ONNXRUNTIME_VERSION }}-cache-v2
+          key: onnxruntime-ios-arm64-${{ env.ONNXRUNTIME_VERSION }}-cache-v3
 
       - name: Checkout v${{ env.ONNXRUNTIME_VERSION }}
         if: steps.cache-build-result.outputs.cache-hit != 'true'
